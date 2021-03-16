@@ -1,6 +1,6 @@
 # esphome
 
-esphome with a 433mhr integration EASYHOME funktsteckdosen, (wireless sockets)
+Suport for EASYHOME funktsteckdosen 433mhr, (wireless sockets) with esphome to connect with homeassistant.
 DHT detector also in the code
 
 # install
