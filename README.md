@@ -1,33 +1,38 @@
-# esphome
+# Reverse Engieniered EASYHOME Funktsteckdosen 433MHr 
 
-Suport for EASYHOME funktsteckdosen 433mhr, (wireless sockets) with esphome to connect with homeassistant.
-DHT detector also in the code
+This project allows you to control with your home IOT integration a radio controled power sockets EASYHOME Funktsteckdosen.
+It has been reverse ingeniered to find the rc-switch protocols used for each button.
 
-# install
+In may case thi software suports the EASYHOME funktsteckdosen 433mhr wireless sockets, with esphome to connect with my homeassistant. A DHT detector has also been added into the code thus is not necesary.
+
+# Hardware needed:
+
+Esp32 or similar with 433MHr radio emmisor connected, a repceptor is also convenient for debugging porpouses.
+
+# Install:
 
 clone repository
 
-open livingroom.yaml 
-change ssid and the password of the wifi
+change ssid and the password of the wifi in the file:
 
-open terminal and write:
+livingroom.yaml 
 
-cd /REPO_PATH 
+Open the terminal and go to the path of the repository:
 
-if using cable (first time always like this):
-sudo docker run --rm -v "${PWD}":/config --device=/dev/ttyUSB0 -it esphome/esphome livingroom.yaml run
+> cd /REPO_PATH 
 
-OTA:
-sudo docker run --rm -v "${PWD}":/config -it esphome/esphome livingroom.yaml run
+Connect the ESP32 to your computer using a wired connection (updates can be done using OTA) and execute:
+
+> sudo docker run --rm -v "${PWD}":/config --device=/dev/ttyUSB0 -it esphome/esphome livingroom.yaml run
+
+For OTA (Over The Air update):
+
+> sudo docker run --rm -v "${PWD}":/config -it esphome/esphome livingroom.yaml run
 
 
-# Documentation
+# Documentation:
 
-esphome:
-
-https://esphome.io
-
-rc-switch and the radio protocol in general:
+Documentation useful for the reverse ingeniering proccess, rc-switch and the radio protocol in general:
 
 https://github.com/sui77/rc-switch/issues/135
 https://github.com/sui77/rc-switch/wiki/Add_New_Remote_Part_1
@@ -37,3 +42,6 @@ https://esphome.io/components/remote_transmitter.html#remote-setting-up-rf
 https://esphome.io/components/remote_transmitter.html
 https://test.sui.li/oszi/
 
+Esphome documentation:
+
+https://esphome.io
